@@ -36,8 +36,6 @@ export default {
     docsRepositoryBase: 'https://github.com/pekinsjr/nextra-docs/blob/main',
     logo: 
     (
-      // Condicionar el logo para que se vea el logo en blanco o en negro segun el tema
-
       <ThemeName/>
     ),
     
