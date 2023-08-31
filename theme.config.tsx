@@ -1,40 +1,46 @@
-// import Image from "next/image"
+import Image from "next/image"
 import { useRouter } from "next/router"
-// import {useTheme } from "next-themes"
-// import { useEffect, useState } from "react";
+import {useTheme } from "next-themes"
+import { useEffect, useState } from "react";
 
-// const ThemeName = () => {
-//   const [themeName, setThemeName] = useState('');
+const ThemeName = () => {
+  const [themeName, setThemeName] = useState('');
 
-//   useEffect(() => {
-//     const storedTheme = localStorage.getItem('theme');
-//     if (storedTheme) {
-//       setThemeName(storedTheme);
-//     }
-//   }, []);
-//   const theme = useTheme();
-//   const currentThemeName = theme.theme === 'dark' ? 'Dark' : 'Light';
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setThemeName(storedTheme);
+    }
+  }, []);
+  const theme = useTheme();
+  const currentThemeName = theme.theme === 'dark' ? 'Dark' : 'Light';
 
-//   useEffect(() => {
-//     setThemeName(currentThemeName);
-//   }, [currentThemeName]);
+  useEffect(() => {
+    setThemeName(currentThemeName);
+  }, [currentThemeName]);
 
-//   return (
-//     <Image
-//       src="https://www.eeasa.com.ec/content/uploads/2020/06/logo-footer.svg"
-//       width="60"
-//       height="60"
-//       style={{ filter: themeName === 'Light' ? 'invert(100%)' : 'none' }}
-//       alt="Logo Mesa De Ayuda empresa electrica ambato"
-//     />
-//   );
-// };
+  return (
+    <Image
+      src="https://www.eeasa.com.ec/content/uploads/2020/06/logo-footer.svg"
+      width="60"
+      height="60"
+      style={{ filter: themeName === 'Light' ? 'invert(100%)' : 'none' }}
+      alt="Logo Mesa De Ayuda empresa electrica ambato"
+    />
+  );
+};
 
 
 
 export default {
     docsRepositoryBase: 'https://github.com/pekinsjr/nextra-docs/blob/main',
-    logo: "https://www.eeasa.com.ec/content/uploads/2020/06/logo-footer.svg",
+    logo: 
+    (
+      // Condicionar el logo para que se vea el logo en blanco o en negro segun el tema
+
+      <ThemeName/>
+    ),
+    
   project: {
     link: 'https://github.com/EdisonLopezEC',
   },
