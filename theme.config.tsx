@@ -12,7 +12,6 @@ const ThemeName = () => {
       setThemeName(storedTheme);
     }
   }, []);
-
   const theme = useTheme();
   const currentThemeName = theme.theme === 'dark' ? 'Dark' : 'Light';
 
